@@ -1,0 +1,81 @@
+.header {
+  width: 100%;
+  background-color: #69FF66;
+  height: 150px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .home span {
+  font-size: 80px;
+  font-weight: 600;
+  font-family: 'Inria Sans', sans-serif;
+  margin: auto;
+  padding-left: 50px;
+}
+
+.header img {
+  width: 160px;
+  height: 130px;
+}
+
+.header .routes-buttons {
+  margin-left: 300px;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.header .routes-buttons button {
+  height: 150px;
+  width: 250px;
+  font-size: 40px;
+  font-family: 'Inria Sans', sans-serif;
+  background-color: transparent;
+  border: none; 
+  outline: none; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header .routes-buttons button:hover {
+  background-color: rgba(11, 137, 8, 0.5);
+}
+
+.header .user-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  gap: 40px;
+  margin: auto;
+}
+
+.header .user-menu .user-auth-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.header .user-menu .user-auth-buttons button {
+  width: 140px; 
+  height: 60px;
+  font-size: 25px;
+  font-family: 'Inria Sans', sans-serif; 
+  background-color: #ffffff; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header .user-menu .user-auth-buttons button:hover {
+  background-color: rgba(11, 137, 8, 0.5);
+}
+
+.header .user-menu img {
+  width: 80px; 
+  height: 80px; 
+  background-color: #ffffff; 
+  border-radius: 50%; 
+}
