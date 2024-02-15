@@ -1,0 +1,27 @@
+.tutorial {
+  font-family: 'Inria Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 100px;
+  margin-top: 150px;
+  text-align: center;
+}
+.tutorial #label {
+  font-size: 96px;
+  font-weight: 900;
+  margin: auto;
+}
+
+.tutorial #text {
+  margin: auto;
+  width: 75%;
+  font-size: 48px;
+}
+
+.tutorial #advice {
+  font-size: 48px;
+  width: 80%;
+  margin: auto;
+  font-weight: 900;
+}

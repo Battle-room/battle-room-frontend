@@ -1,0 +1,65 @@
+.home-page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 50px; /* Додати відступ вниз */
+  text-align: center;
+  font-family: 'Inria Sans', sans-serif;
+}
+
+.intro-text #name {
+  font-size: 96px;
+  font-weight: 900;
+}
+
+.intro-text #text {
+  font-size: 64px;
+  font-weight: 500;
+  margin: auto;
+  width: 70%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Додати відстань між кнопками */
+}
+
+.buttons button {
+  padding: 10px 20px;
+  font-family: 'Inria Sans', sans-serif;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease; /* Анімація для зміни стилів */
+  font-size: 30px;
+}
+
+.buttons #play-now {
+  background-color: #69FF66;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid darkgreen; /* Додати бордер */
+}
+
+.buttons #how-to-play {
+  background-color: white;
+  color: black;
+  border: 2px solid #ccc; /* Додати бордер */
+}
+
+/* Налаштування для анімації при наведенні */
+.buttons button:hover {
+  transform: scale(1.1); /* Збільшення розміру при наведенні */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Збільшена тінь */
+}
+
+.home-page-intro #full-home-page-logo {
+  margin-top: 200px;
+}
