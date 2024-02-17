@@ -1,13 +1,16 @@
 import '../styles/header.css';
 import logo from '../assets/logo.png';
 import user from '../assets/user.png';
+import { Link } from 'react-router-dom';
 
 function Header() {
   return(
     <div className='header'>
-      <div className='home'>
-        <span>UAMG</span>
-      </div>
+      <Link to='/'>
+        <div className='home'>
+          <span>UAMG</span>
+        </div>
+      </Link>
       <img src={logo} alt="" />
       <div className='routes-buttons'>
         <button>Packages</button>
@@ -15,8 +18,12 @@ function Header() {
       </div>
       <div className='user-menu'>
         <div className='user-auth-buttons'>
-          <button>log in</button>
-          <button>sign in</button>
+          <Link to='/login'>
+            <button>log in</button>
+          </Link>
+          <Link to='/signin'>
+            <button>sign in</button>
+          </Link>
         </div>
         <img src={user} alt="" />
       </div>
