@@ -1,0 +1,54 @@
+.login-container {
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form-container {
+  background-color: #fff; /* Змінено на білий колір */
+  padding: 40px; /* Збільшено відступи */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Збільшено ширину */
+  max-width: 600px; /* Задано максимальну ширину */
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.login-form div {
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.login-form-container input[type="email"],
+.login-form-container input[type="password"] {
+  padding: 15px; /* Збільшено величину вводу */
+  border: 1px solid #000; /* Змінено на чорний колір */
+  border-radius: 10px; /* Збільшено радіус */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-form-container button {
+  padding: 15px; /* Збільшено величину кнопки */
+  border: none;
+  border-radius: 10px;
+  background-color: #69FF66; /* Змінено на зелений колір */
+  color: #000; /* Змінено на чорний колір */
+  cursor: pointer;
+}
+
+.login-form-container button:hover {
+  background-color: #000; /* Змінено на чорний колір */
+  color: #fff; /* Змінено на білий колір */
+}
