@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import { useState } from "react";
 import "../styles/Login.css";
 import { logIn } from "../api/auth";
+import { setJWT } from "../services/CookieService";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -17,8 +18,8 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const response = await logIn(email, password);
-    console.log(response);
+    const response: any = await logIn(email, password);
+    setJWT(response.data);
   };
 
   return (

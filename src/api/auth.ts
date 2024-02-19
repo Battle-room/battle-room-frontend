@@ -3,7 +3,7 @@ import { BASE_URL } from "./axios";
 
 const authPrefix = '/auth'
 
-export async function logIn(email: string, password: string) {
+export function logIn(email: string, password: string) {
   const url = BASE_URL + authPrefix + '/login';
   const response = axios.post(url, {
       password,
@@ -11,6 +11,6 @@ export async function logIn(email: string, password: string) {
     }
   ).catch((error) => {
     console.log(error);
-  });
+  })
   return response;
 }
