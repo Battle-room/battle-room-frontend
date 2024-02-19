@@ -3,11 +3,13 @@ import { useState } from "react";
 import "../styles/Login.css";
 import { logIn } from "../api/auth";
 import { setJWT } from "../services/CookieService";
+import { updateUser } from "../services/UserService";
+import { useUser } from '../UserContext'
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const {setUser} = useUser();
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
   };
@@ -20,6 +22,8 @@ export default function LoginPage() {
     e.preventDefault();
     const response: any = await logIn(email, password);
     setJWT(response.data);
+    const user = await updateUser();
+    setUser(user);
   };
 
   return (
