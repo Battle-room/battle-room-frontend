@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { useState } from "react";
 import "../styles/Login.css";
+import { logIn } from "../api/auth";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -14,9 +15,10 @@ export default function LoginPage() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(email + password);
+    const response = await logIn(email, password);
+    console.log(response);
   };
 
   return (
