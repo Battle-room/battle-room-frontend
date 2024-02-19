@@ -1,9 +1,12 @@
 import '../styles/header.css';
 import logo from '../assets/logo.png';
-import user from '../assets/user.png';
+import unauthorizedUser from '../assets/user.png';
 import { Link } from 'react-router-dom';
+import { useUser } from '../UserContext';
 
 function Header() {
+  const {user} = useUser();
+
   return(
     <div className='header'>
       <Link to='/'>
@@ -25,7 +28,8 @@ function Header() {
             <button>sign in</button>
           </Link>
         </div>
-        <img src={user} alt="" />
+        {user ? <img src={user.avatar} alt="" /> : <img src={unauthorizedUser} alt="" />}
+        
       </div>
     </div>
   );
