@@ -9,7 +9,7 @@ function Header() {
 
   return(
     <div className='header'>
-      <Link to='/'>
+      <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
         <div className='home'>
           <span>UAMG</span>
         </div>
