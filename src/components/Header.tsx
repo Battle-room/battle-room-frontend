@@ -2,10 +2,12 @@ import '../styles/header.css';
 import logo from '../assets/logo.png';
 import unauthorizedUser from '../assets/user.png';
 import { Link } from 'react-router-dom';
-import { useUser } from '../UserContext';
+import User from '../types/User';
+import { useSelector } from 'react-redux';
 
 function Header() {
-  const {user} = useUser();
+
+  const user: User | undefined = useSelector((state: any) => state.user);
 
   return(
     <div className='header'>
@@ -29,7 +31,6 @@ function Header() {
           </Link>
         </div>
         {user ? <img src={user.avatar} alt="" /> : <img src={unauthorizedUser} alt="" />}
-        
       </div>
     </div>
   );

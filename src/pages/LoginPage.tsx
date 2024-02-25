@@ -3,13 +3,15 @@ import { useState } from "react";
 import "../styles/Login.css";
 import { logIn } from "../api/auth";
 import { setJWT } from "../services/CookieService";
-import { updateUser } from "../services/UserService";
-import { useUser } from '../UserContext'
+import { createAvatarUrl, updateUser } from "../services/UserService";
+import { useDispatch } from "react-redux";
+import { UserStoreActions } from "../store/UserStore";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {setUser} = useUser();
+  const dispatch = useDispatch();
+
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
   };
@@ -23,7 +25,8 @@ export default function LoginPage() {
     const response: any = await logIn(email, password);
     setJWT(response.data);
     const user = await updateUser();
-    setUser(user);
+    user.avatar = createAvatarUrl(user.avatar)
+    dispatch({type: UserStoreActions.SET_USER, payload: user});
   };
 
   return (
