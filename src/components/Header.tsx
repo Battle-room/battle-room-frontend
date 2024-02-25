@@ -6,10 +6,9 @@ import User from '../types/User';
 import { useSelector } from 'react-redux';
 
 function Header() {
-
   const user: User | undefined = useSelector((state: any) => state.user);
 
-  return(
+  return (
     <div className='header'>
       <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
         <div className='home'>
@@ -23,17 +22,26 @@ function Header() {
       </div>
       <div className='user-menu'>
         <div className='user-auth-buttons'>
-          <Link to='/login'>
-            <button>log in</button>
-          </Link>
-          <Link to='/signin'>
-            <button>sign in</button>
-          </Link>
+          {user ? (
+            <Link to='/profile'>
+              <button>Profile</button>
+            </Link>
+          ) : (
+            <>
+              <Link to='/login'>
+                <button>log in</button>
+              </Link>
+              <Link to='/signin'>
+                <button>sign in</button>
+              </Link>
+            </>
+          )}
         </div>
         {user ? <img src={user.avatar} alt="" /> : <img src={unauthorizedUser} alt="" />}
       </div>
     </div>
   );
 }
+
 
 export default Header;
