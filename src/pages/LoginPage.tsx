@@ -6,11 +6,14 @@ import { setJWT } from "../services/CookieService";
 import { createAvatarUrl, updateUser } from "../services/UserService";
 import { useDispatch } from "react-redux";
 import { UserStoreActions } from "../store/UserStore";
+import User from "../types/User";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleEmailChange = (e: any) => {
     setEmail(e.target.value);
@@ -22,11 +25,16 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const response: any = await logIn(email, password);
-    setJWT(response.data);
-    const user = await updateUser();
-    user.avatar = createAvatarUrl(user.avatar)
-    dispatch({type: UserStoreActions.SET_USER, payload: user});
+    try {
+      const response: any = await logIn(email, password);
+      setJWT(response.data);
+      const user = await updateUser() as User;
+      user.avatar = createAvatarUrl(user.avatar)
+      dispatch({type: UserStoreActions.SET_USER, payload: user});
+      navigate('/')
+    } catch(error) {
+      console.log('Login failed')
+    }
   };
 
   return (

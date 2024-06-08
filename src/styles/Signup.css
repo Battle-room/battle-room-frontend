@@ -1,0 +1,55 @@
+.signup-container {
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form-container {
+  background-color: #fff; /* Білий колір фону */
+  padding: 40px; /* Відступи */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ширина */
+  max-width: 600px; /* Максимальна ширина */
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.signup-form div {
+  padding: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.signup-form-container input[type="text"],
+.signup-form-container input[type="email"],
+.signup-form-container input[type="password"] {
+  padding: 15px; /* Величина вводу */
+  border: 1px solid #000; /* Чорний колір рамки */
+  border-radius: 10px; /* Радіус */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.signup-form-container button {
+  padding: 15px; /* Величина кнопки */
+  border: none;
+  border-radius: 10px;
+  background-color: #69FF66; /* Зелений колір фону */
+  color: #000; /* Чорний колір тексту */
+  cursor: pointer;
+}
+
+.signup-form-container button:hover {
+  background-color: #000; /* Чорний колір фону при наведенні */
+  color: #fff; /* Білий колір тексту при наведенні */
+}

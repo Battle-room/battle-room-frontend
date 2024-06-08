@@ -2,8 +2,7 @@ import Cookies from "js-cookie";
 import { Tokens } from "../types/Tokens";
 
 export function setJWT(tokens: Tokens) {
-  Cookies.set('accessToken', tokens.accessToken);
-  Cookies.set('refreshToken', tokens.refreshToken);
+  Cookies.set('accessToken', tokens.access_token);
 }
 
 export function getAccessToken() {

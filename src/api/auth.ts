@@ -7,7 +7,40 @@ export function logIn(email: string, password: string) {
   const url = BASE_URL + authPrefix + '/login';
   const response = axios.post(url, {
       password,
-      username: email,
+      email,
+    }
+  ).catch((error) => {
+    console.log(error);
+  })
+  return response;
+}
+
+export function signUp (username: string, email: string, password: string) {
+  const url = BASE_URL + authPrefix + '/signup';
+  const response = axios.post(url, {
+    password,
+    email,
+    username
+    }
+  ).catch((error) => {
+    console.log(error);
+  })
+  return response;
+}
+
+export function requestEmailVerification(email: string) {
+  const url = BASE_URL + authPrefix + '/email/request-verification';
+  const response = axios.post(url, {
+    email
+    }
+  )
+  return response;
+}
+
+export function verifyEmail(token: string) {
+  const url = BASE_URL + authPrefix + '/email/verify';
+  const response = axios.post(url, {
+    token
     }
   ).catch((error) => {
     console.log(error);

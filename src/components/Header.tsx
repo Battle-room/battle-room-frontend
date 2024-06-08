@@ -2,11 +2,10 @@ import '../styles/header.css';
 import logo from '../assets/logo.png';
 import unauthorizedUser from '../assets/user.png';
 import { Link } from 'react-router-dom';
-import User from '../types/User';
 import { useSelector } from 'react-redux';
 
 function Header() {
-  const user: User | undefined = useSelector((state: any) => state.user);
+  const user = useSelector((state: any) => state.user);
 
   return (
     <div className='header'>

@@ -1,4 +1,3 @@
 export interface Tokens {
-  accessToken: string;
-  refreshToken: string;
+  access_token: string;
 }
