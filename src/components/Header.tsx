@@ -36,7 +36,11 @@ function Header() {
             </>
           )}
         </div>
-        {user ? <img src={user.avatar} alt="" /> : <img src={unauthorizedUser} alt="" />}
+        {user && user.avatar ? (
+          <img src={user.avatar} alt="User Avatar" />
+        ) : (
+          <img src={unauthorizedUser} alt="Default Avatar" />
+        )}      
       </div>
     </div>
   );
