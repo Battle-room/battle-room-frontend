@@ -1,5 +1,6 @@
 import { createStore } from "redux";
 import User from "../types/User";
+import { BASE_URL } from "../api/axios";
 
 
 type userState = {
@@ -17,12 +18,20 @@ export const UserStoreActions = {
 const reducer = (state = initialState, action: any) => {
   switch(action.type) {
     case UserStoreActions.SET_USER:
-      return {...state, user: action.payload}
+      const updatedUser = {
+        ...action.payload,
+        avatar: action.payload.avatar ? `${BASE_URL}/${action.payload.avatar}` : null
+      };
+      return { ...state, user: updatedUser };
     case UserStoreActions.UPDATE_USER:
-      return {...state, user: action.payload}
-    case UserStoreActions.CLEAR_USER: 
-      return {...state, user: undefined};
-    default: 
+      const updatedUserForUpdate = {
+        ...action.payload,
+        avatar: action.payload.avatar ? `${BASE_URL}/${action.payload.avatar}` : null
+      };
+      return { ...state, user: updatedUserForUpdate };
+    case UserStoreActions.CLEAR_USER:
+      return { ...state, user: undefined };
+    default:
       return state;
   }
 }
