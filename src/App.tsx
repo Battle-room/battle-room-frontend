@@ -9,6 +9,7 @@ import { Provider, useDispatch } from "react-redux";
 import { userStore, UserStoreActions } from "./store/UserStore";
 import { getAccessToken } from "./services/CookieService";
 import { getMe } from "./api/auth";
+import ProfilePage from "./pages/Profile";
 
 function AppRoutes() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function AppRoutes() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/verify/email/:token" element={<EmailVerifyPage />} />
+      < Route path="/profile" element={<ProfilePage />} />
     </Routes>
   );
 }
